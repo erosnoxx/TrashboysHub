@@ -1,6 +1,6 @@
 import factory
 from faker import Faker
-from app import db
+from app.extensions import db
 from app.models import Post
 
 faker = Faker()

@@ -40,3 +40,14 @@ def _(browser=browser):
     assert browser.is_text_present(post.title)
     assert browser.is_text_not_present(drafts[0].title)
     assert browser.is_text_not_present(drafts[1].title)
+
+
+@test('Current user sees a unitary post')
+def _(browser=browser):
+    post = PostFactory.create()
+
+    browser.visit(url_for('home.index'))
+    browser.links.find_by_text(post.title).click()
+
+    assert browser.is_text_present(post.title)
+    assert browser.is_text_present(post.text)
