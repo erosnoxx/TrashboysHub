@@ -1,6 +1,10 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+import app.routes as routes
 
-app = Flask(__name__)
-db = SQLAlchemy(app)
 
+def create_app():
+    app = Flask(__name__)
+
+    routes.init_app(app)
+    
+    return app
