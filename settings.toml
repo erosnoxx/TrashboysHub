@@ -1,9 +1,12 @@
 [default]
+SECRET_KEY = 'prachedes123'
 SQLALCHEMY_TRACK_MODIFICATIONS = false
 EXTENSIONS = ['app.routes:init_app', 'app.extensions:init_app']
+
 
 [development]
 SQLALCHEMY_DATABASE_URI = "sqlite:///Hub.sqlite"
 
 [testing]
 SQLALCHEMY_DATABASE_URI = "sqlite:///"
+WTF_CSRF_ENABLED = false

@@ -7,6 +7,23 @@
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url_for('categories.new') }}">Register category</a>
+                <a href="{{ url_for('posts.new') }}">Register post</a>
+            </li>
+        </ul>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <main>
         {% block content %}
         

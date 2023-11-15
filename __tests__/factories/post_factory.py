@@ -5,6 +5,7 @@ from app.models import Post
 
 faker = Faker()
 
+
 class PostFactory(factory.alchemy.SQLAlchemyModelFactory):
     class Meta:
         model = Post
@@ -14,3 +15,4 @@ class PostFactory(factory.alchemy.SQLAlchemyModelFactory):
     title = faker.paragraph()
     text = faker.text()
     published = True
+    category_id = 'Something'

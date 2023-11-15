@@ -10,7 +10,7 @@ def _(browser=browser):
 
     browser.visit(url_for('home.index'))
 
-    assert browser.is_text_present('Hello')
+    assert browser.is_text_present('Posts')
 
 
 @test('Current user access main page and sees a post')
