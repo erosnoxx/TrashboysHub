@@ -2,10 +2,21 @@
 
 {% block content %}
 
-<h1>{{post.title}}</h1>
-
-<p>
-    {{post.text}}
-</p>
+<section class="section margin-top-large">
+    <div class="container container-lg">
+      <div class="text-primary">
+        {% if post.image %}
+            <img src="{{url_for('media.upload', name=post.image)}}" alt="{{post.title}}">
+        {% endif %}
+        <h4 class="text-left">
+          {{post.title}}
+        </h4>
+        <p>
+            {{post.text}}
+        </p>
+       Gender: <small><strong>{{post.category.name}}</strong></small>
+      </div>
+    </div>
+  </section>
 
 {% endblock content %}

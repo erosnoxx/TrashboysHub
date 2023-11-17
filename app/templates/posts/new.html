@@ -2,13 +2,59 @@
 
 {% block content %}
 
-<form action="{{url_for('posts.create')}}" method="post">
-    {{form.csrf_token}}
-    {{form.title}}
-    {{form.text}}
-    {{form.published}}
-    {{form.categories}}
-    {{form.submit}}
+<section class="section margin-top-large">
+    <div class="container container-lg">
+      <form action="{{url_for('posts.create')}}" method="post" enctype="multipart/form-data">
+        {{form.csrf_token}}
+        <fieldset>
+          <legend>New Post</legend>
+          <div class="row">
+            <div class="col sm-12">
+              <div class="form-group">
+                {{form.title.label}}
+                {{form.title(class_="input-block")}}
+              </div>
+            </div>
+            <div class="col sm-12">
+              <div class="form-group">
+                {{form.categories.label}}
+                {{form.categories(class_="input-block")}}
+              </div>
+            </div>
+            <div class="col sm-12">
+              <div class="form-group">
+                {{form.text.label}}
+                {{form.text(class_="input-block")}}
+              </div>
+            </div>
+
+            <div class="col sm-0">
+              <div class="form-group">
+                <label for="published" class="paper-check">
+                {{form.published}}
+                <span>Publish</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="col sm-12">
+              <div class="form-group">
+                {{form.image.label}}
+                {{form.image(class_="input-block")}}
+              </div>
+            </div>
+
+            <div class="col sm-12">
+              <div class="form-group text-right">
+                {{form.submit(class_="paper btn btn-success")}}
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section> 
+    
 </form>
 
 {% endblock content %}

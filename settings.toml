@@ -1,8 +1,9 @@
 [default]
 SECRET_KEY = 'prachedes123'
 SQLALCHEMY_TRACK_MODIFICATIONS = false
+UPLOAD_FOLDER = 'uploads'
 EXTENSIONS = ['app.routes:init_app', 'app.extensions:init_app']
-
+STATIC_FOLDER = "static"
 
 [development]
 SQLALCHEMY_DATABASE_URI = "sqlite:///Hub.sqlite"

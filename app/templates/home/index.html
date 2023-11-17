@@ -2,13 +2,35 @@
 
 
 {% block content %}
-    <h1>Posts</h1> <br>
+    
+
+
+ <div class="container container-lg">
+    <h1>All Posts</h1>
+<div class="row">
+
+
     {% if posts %}
-    {% for post in posts %}
-    <h4>
-        <a href="{{ url_for('posts.show', id=post.id) }}">{{post.title}}</a> <br /> <br />
-    </h4>
-    {% endfor %}
+    
+    <section class="section margin-top-large">
+        <div class="container container-lg">
+            <h1>Songs</h1>
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-fill col">
+            <a href="{{ url_for('posts.show', id=post.id) }}" class="text-primary">
+                {% if post.image %}
+                    <img src="{{url_for('media.upload', name=post.image)}}" alt="{{post.title}}">
+                {% endif %}
+                <h2 class="text-center">
+                    {{post.title}}
+                </h2>
+            </a>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+    </section>
     {% else %}
     <h4>
         Nothing to do here

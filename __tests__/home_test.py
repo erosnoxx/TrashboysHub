@@ -3,6 +3,7 @@ from __tests__.fixtures import browser
 from faker import Faker
 from flask import url_for
 from __tests__.factories.post_factory import PostFactory
+from __tests__.factories.category_factory import CategoryFactory
 
 
 @test('Main page must be online')
@@ -10,7 +11,7 @@ def _(browser=browser):
 
     browser.visit(url_for('home.index'))
 
-    assert browser.is_text_present('Posts')
+    assert browser.is_text_present('All Posts')
 
 
 @test('Current user access main page and sees a post')
@@ -44,10 +45,12 @@ def _(browser=browser):
 
 @test('Current user sees a unitary post')
 def _(browser=browser):
-    post = PostFactory.create()
+    category = CategoryFactory.create(name='Rock')
+    post = PostFactory.create(category=category)
 
     browser.visit(url_for('home.index'))
-    browser.links.find_by_text(post.title).click()
+    browser.links.find_by_partial_text(post.title).click()
 
     assert browser.is_text_present(post.title)
     assert browser.is_text_present(post.text)
+    assert browser.is_text_present(category.name)

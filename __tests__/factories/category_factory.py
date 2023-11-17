@@ -10,4 +10,4 @@ class CategoryFactory(factory.alchemy.SQLAlchemyModelFactory):
         sqlalchemy_session = db.session
         sqlalchemy_session_persistence = "commit"
     
-    name = Faker().paragraph()
+    name = factory.Sequence(lambda x: Faker().name())

@@ -10,15 +10,19 @@ def _(browser=browser):
     category = CategoryFactory.create()
 
     browser.visit(url_for('home.index'))
-    browser.links.find_by_text('Register post').click()
+    browser.links.find_by_text('New post').click()
     browser.fill('title', 'Só de boa')
     browser.fill('text', 'Na paz de Deus')
     browser.select('categories', str(category.id))
     browser.check('published')
+    browser.attach_file('image', '__tests__/resources/grecia.jpg')
     browser.find_by_value('Save').click()
 
     assert browser.url == url_for('home.index')
     assert browser.is_text_present('Published Successfully')
+    assert browser.is_element_present_by_css('img[src*="grecia.jpg"]')
     assert Post.query.first().title == 'Só de boa'
     assert Post.query.count() == 1
     assert Category.query.first() == Post.query.first().category
+
+

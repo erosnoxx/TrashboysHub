@@ -1,5 +1,5 @@
 from typing import Any
-from wtforms.fields import StringField, SubmitField, BooleanField, TextAreaField, SelectField
+from wtforms.fields import StringField, SubmitField, BooleanField, TextAreaField, SelectField, FileField
 from flask_wtf import FlaskForm
 from app.models import Category
 
@@ -13,6 +13,7 @@ class PostForm(FlaskForm):
     text = TextAreaField('Text')
     published = BooleanField('Published')
     categories = SelectField('Category', coerce=int)
+    image = FileField('Image')
     submit = SubmitField('Save')
 
     def __init__(self):

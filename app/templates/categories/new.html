@@ -2,10 +2,28 @@
 
 {% block content %}
 
-<form action="{{url_for('categories.create')}}" method="post">
-    {{form.csrf_token}}
-    {{form.name}}
-    {{form.submit}}
-</form>
+<section class="section margin-top-large">
+    <div class="container container-lg">
+        <form action="{{url_for('categories.create')}}" method="post">
+        {{form.csrf_token}}
+        <fieldset>
+          <legend>Category Register</legend>
+          <div class="row">
+            <div class="col sm-12">
+              <div class="form-group">
+                {{form.name.label}}
+                {{form.name(class_="input-block")}}
+              </div>
+            </div>
+            <div class="col sm-12">
+              <div class="form-group text-right ">
+                {{form.submit(class_="paper-btn btn-success")}}
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section>
 
 {% endblock content %}
