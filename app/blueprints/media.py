@@ -8,4 +8,3 @@ media = Blueprint('media', __name__)
 def upload(name):
     path = os.path.join(os.getcwd(), 'uploads')
     return send_from_directory(path, name)
-

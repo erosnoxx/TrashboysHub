@@ -1,4 +1,4 @@
-import factory
+import factory  # type: ignore
 from faker import Faker
 from app.extensions import db
 from app.models import Category
@@ -9,5 +9,5 @@ class CategoryFactory(factory.alchemy.SQLAlchemyModelFactory):
         model = Category
         sqlalchemy_session = db.session
         sqlalchemy_session_persistence = "commit"
-   
+
     name = factory.Sequence(lambda x: Faker().name())

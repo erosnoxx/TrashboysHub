@@ -4,17 +4,20 @@ from app.models import Post
 from app.forms import PostForm
 from app.extensions import db
 from werkzeug.utils import secure_filename
+from flask_login import login_required
 
 post = Blueprint('posts', __name__, url_prefix='/posts')
 
 
 @post.get('/<id>')
+@login_required
 def show(id):
     post = Post.query.get(id)
     return render_template('posts/show.html', post=post)
 
 
 @post.get('/new')
+@login_required
 def new():
     form = PostForm()
     return render_template('posts/new.html', form=form)

@@ -8,5 +8,4 @@ def create_app():
     app.logger.setLevel(logging.INFO)
 
     FlaskDynaconf(app, extensions_list=True)
-    
     return app

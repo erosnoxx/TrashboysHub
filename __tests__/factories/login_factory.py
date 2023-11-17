@@ -1,4 +1,4 @@
-import factory
+import factory   # type: ignore
 from app.extensions import db
 from app.models import User
 from datetime import datetime
@@ -9,7 +9,7 @@ class LoginFactory(factory.alchemy.SQLAlchemyModelFactory):
         model = User
         sqlalchemy_session = db.session
         sqlalchemy_session_persistence = "commit"
-    
+
     fullname = 'eros gabriel vieira'
     username = 'erosnox'
     email = 'eros@gmail.com'

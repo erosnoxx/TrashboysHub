@@ -1,4 +1,4 @@
-import factory
+import factory  # type: ignore
 from faker import Faker
 from app.extensions import db
 from app.models import Post
@@ -12,7 +12,7 @@ class PostFactory(factory.alchemy.SQLAlchemyModelFactory):
         model = Post
         sqlalchemy_session = db.session
         sqlalchemy_session_persistence = "commit"
-    
+
     title = faker.paragraph()
     text = faker.text()
     category = factory.SubFactory(CategoryFactory)

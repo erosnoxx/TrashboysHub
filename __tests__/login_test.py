@@ -4,7 +4,7 @@ from flask import url_for
 from __tests__.factories.login_factory import LoginFactory
 
 
-@test('Current user registers a post', tags=['login'])
+@test('Current user login', tags=['login'])
 def _(browser=browser):
     LoginFactory.create()
 
@@ -12,6 +12,5 @@ def _(browser=browser):
     browser.fill('username', 'erosnox')
     browser.fill('password', 'prachedes')
     browser.find_by_value('Login').click()
-
 
     assert browser.url == url_for('home.index')

@@ -7,7 +7,6 @@ db = SQLAlchemy()
 lm = LoginManager()
 
 
-
 def init_app(app):
     db.init_app(app)
     Migrate(app, db)

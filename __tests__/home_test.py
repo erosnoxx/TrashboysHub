@@ -1,6 +1,5 @@
 from ward import test
 from __tests__.fixtures import browser
-from faker import Faker
 from flask import url_for
 from __tests__.factories.post_factory import PostFactory
 from __tests__.factories.category_factory import CategoryFactory

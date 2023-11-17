@@ -1,10 +1,11 @@
-from ward import fixture
+from ward import fixture  # type: ignore
 from splinter import Browser
 from app import create_app
 from app.extensions import db
 from dotenv import load_dotenv
 
 load_dotenv('.env.test')
+
 
 @fixture
 def browser():
