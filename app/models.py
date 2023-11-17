@@ -1,4 +1,5 @@
 from app.extensions import db
+from flask_login import UserMixin
 
 
 class Post(db.Model):
@@ -11,7 +12,7 @@ class Post(db.Model):
 
     def __repr__(self):
         return self.title
-    
+
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -20,3 +21,43 @@ class Category(db.Model):
 
     def __repr__(self):
         return self.name
+
+
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    fullname = db.Column(db.String(50), nullable=False)
+    username = db.Column(db.String(15), nullable=False, unique=True)
+    email = db.Column(db.String(255), nullable=False, unique=True)
+    password = db.Column(db.String(255), nullable=False)
+    salt = db.Column(db.String(255), nullable=False)
+    gender = db.Column(db.String, nullable=False)
+    birth = db.Column(db.Date, nullable=False)
+    reg_date = db.Column(db.Date, nullable=False)
+
+    @property
+    def is_authenticated(self):
+        return True
+    
+    @property
+    def is_active(self):
+        return True
+    
+    @property
+    def is_anonymous(self):
+        return False
+    
+    def get_id(self):
+        return str(self.id)
+
+    def __init__(self, fullname, username, email, password, salt, gender, birth, reg_date):
+        self.fullname = fullname
+        self.username = username
+        self.email = email
+        self.password = password
+        self.salt = salt
+        self.gender = gender
+        self.birth = birth
+        self.reg_date = reg_date
+
+    def __repr__(self):
+        return self.username

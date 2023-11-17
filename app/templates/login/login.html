@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="../../static/assets/images/login/trashboys-logo-ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../static/css/login/style.css">
+</head>
+<body>
+    <header id="cabecalho">
+        <div id="div-navs">
+            <div id="div-logo-peq">
+                <article id="logo">
+                </article>
+            </div>
+        </div>
+        <div id="sombra-cabecalho">
+            <div id="links-internos">
+                <button id="login_header" class="navs">Login</button>
+                <button id="signin-header" class="navs">Sign-in</button>
+            </div>
+        </div>
+    </header>
+    <main id="menu">
+        <div id="elements">
+            <div id="aba-login">
+                <h1 id="login">Login</h1>
+                <div id="fazer-o-login">
+                    <p>Don't have an account?</p>
+                    <a href="">Sign-up</a>
+                </div>
+                <div id="forms">
+                <form id="form-geral" method="post">
+                    <div id="credenciais">
+                        <div id="email">
+                        {{form.username.label}}
+                        {{form.username(id_="form-email")}}
+                        </div>
+                        <div id="senha">
+                        {{form.password.label}}
+                        {{form.password(id_="form-senha")}}
+                        </div>
+                    </div>
+                        <div id="botoes">
+                        {{form.submit(id_="botao-login")}}
+                        </div>
+                </form>
+                </div>
+            </div>
+                <div id="titulo-mob">
+                    <article id="titles">
+                        <div id="subs">
+                            <h2 id="subtitulo-1">Tune into the Beat:</h2>
+                            <h2 id="subtitulo-2">Limitless Music at</h2>
+                        </div>
+                        <h1 id="trashboys">Trashboys Hub</h1>
+                    </article>
+                <img id="logo-grande" src="../../static/assets/images/login/trashboys_logo-transformed.png" alt="Trashboys">
+            </div>
+        </div>
+        <div id="sombra">
+            <article id="imagem">
+            </article>
+        </div>
+    </main>
+    <script src="../../static/js/login/script.js"></script>
+</body>
+</html>

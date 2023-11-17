@@ -9,5 +9,5 @@ class CategoryFactory(factory.alchemy.SQLAlchemyModelFactory):
         model = Category
         sqlalchemy_session = db.session
         sqlalchemy_session_persistence = "commit"
-    
+   
     name = factory.Sequence(lambda x: Faker().name())
