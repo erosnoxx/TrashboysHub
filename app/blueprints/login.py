@@ -26,15 +26,11 @@ def login_():
             login_user(user)
             return redirect(url_for('home.index'))
         else:
-            current_app.logger.info("Invalid username or password.")
-    else:
-        current_app.logger.warning("Form validation failed!")
-        current_app.logger.warning(form.errors)
+            flash('Invalid credentials')
     return render_template('login/login.html', form=form)
 
 
 @login.route('/logout')
 def logout():
     logout_user()
-    flash('Logged out')
-    return redirect(url_for('login.login'))
+    return redirect(url_for('login.login_'))
