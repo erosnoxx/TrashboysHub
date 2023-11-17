@@ -32,6 +32,7 @@
                 </div>
                 <div id="forms">
                 <form id="form-geral" method="post">
+                    {{form.csrf_token}}
                     <div id="credenciais">
                         <div id="email">
                         {{form.username.label}}
