@@ -17,8 +17,8 @@
         </div>
         <div id="sombra-cabecalho">
             <div id="links-internos">
-                <button id="login_header" class="navs">Login</button>
-                <button id="signin-header" class="navs">Sign Up</button>
+                <a href="{{ url_for('login.login_') }}" id="signin-header" class="navs">Login</a>
+                <a href="{{ url_for('login.register') }}" id="signin-header" class="navs">Sign Up</a>
             </div>
         </div>
     </header>
@@ -28,7 +28,7 @@
                 <h1 id="login">Login</h1>
                 <div id="fazer-o-login">
                     <p>Don't have an account?</p>
-                    <a href="">Sign up</a>
+                    <a href="{{ url_for('login.register') }}">Sign up</a>
                 </div>
                 <div id="forms">
                 <form id="form-geral" method="post">
