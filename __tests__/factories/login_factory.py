@@ -1,7 +1,8 @@
-import factory   # type: ignore
+# login_factory.py
+import factory
 from app.extensions import db
 from app.models import User
-from datetime import datetime
+from .permission_factory import PermissionFactory
 from faker import Faker
 
 
@@ -10,6 +11,18 @@ class LoginFactory(factory.alchemy.SQLAlchemyModelFactory):
         model = User
         sqlalchemy_session = db.session
         sqlalchemy_session_persistence = "commit"
+
+    @factory.post_generation
+    def permissions(self, create, extracted, **kwargs):
+        if not create:
+            return
+
+        if extracted:
+            for permission in extracted:
+                self.permissions.append(permission)
+        else:
+            default_permissions = [PermissionFactory.create() for _ in range(2)]
+            self.permissions.extend(default_permissions)
 
     fullname = Faker().name()
     username = Faker().user_name()

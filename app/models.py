@@ -24,6 +24,7 @@ class Category(db.Model):
 
 
 class User(db.Model, UserMixin):
+    __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     fullname = db.Column(db.String(50), nullable=False)
     username = db.Column(db.String(15), nullable=False, unique=True)
@@ -33,6 +34,8 @@ class User(db.Model, UserMixin):
     gender = db.Column(db.String, nullable=False)
     birth = db.Column(db.Date, nullable=False)
     reg_date = db.Column(db.Date, nullable=False)
+    permissions = db.relationship('Permissions', secondary='user_permissions',
+                                  backref=db.backref('users', lazy='dynamic'))
 
     @property
     def is_authenticated(self):
@@ -49,7 +52,8 @@ class User(db.Model, UserMixin):
     def get_id(self):
         return str(self.id)
 
-    def __init__(self, fullname, username, email, password, salt, gender, birth, reg_date):
+    def __init__(self, fullname, username, email, password, salt, gender,
+                 birth, reg_date):
         self.fullname = fullname
         self.username = username
         self.email = email
@@ -61,3 +65,23 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return self.username
+
+
+class Permissions(db.Model):
+    __tablename__ = 'permissions'
+    id = db.Column(db.Integer, primary_key=True)
+    level = db.Column(db.String, nullable=False)
+
+    def __init__(self, level):
+        self.level = level
+    
+    def __repr__(self):
+        return self.level
+
+
+class User_Permissions(db.Model):
+    __tablename__ = 'user_permissions'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    permission_id = db.Column(db.Integer, db.ForeignKey('permissions.id'),
+                              nullable=False)
