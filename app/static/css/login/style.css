@@ -9,6 +9,14 @@ body{
     box-shadow: inset 550px 0px 400px #0B0F1B;
 }
 
+#signin-header{
+    cursor: pointer;
+}
+
+#login_header{
+    cursor: pointer;
+}
+
 #cabecalho{
     display: flex;
     justify-content: center;
@@ -187,7 +195,17 @@ form{
     gap: 50px;
 }
 
+input[type="text"] {
+    padding: 5px;
+}
+
+input[type="password"] {
+    padding: 5px;
+}
+
+
 #botao-login{
+    cursor: pointer;
     width: 50%;
     border-radius: 20px;
     width: 80px;
