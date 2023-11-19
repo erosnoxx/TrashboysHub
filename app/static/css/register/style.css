@@ -9,6 +9,7 @@ body{
     background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
     */
     box-shadow: inset 550px 0px 400px #0B0F1B;
+    
     background-color: #1e2741;
 }
 
@@ -25,6 +26,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 70px;
+
     background-color: #1e2741;
 }
 
@@ -92,7 +94,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 30px;
     margin: 0px;
     width: 724px;
     height: 573px;
@@ -104,8 +106,8 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 38px;
-    width: 450px;
+    gap: 20px;
+    width: 500px;
     height: 500px;
     background-color: #0d111f;
     border-radius: 20px;
@@ -158,6 +160,37 @@ form{
     font-size: 13px;
 }
 
+#credenciais{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+#name-and-user{
+    display: flex;
+    gap: 20px;
+}
+
+#email-e-senha{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+#aniversario-e-genero{
+    display: flex;
+    gap: 20px;
+}
+
+#aniversario{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 13px; 
+}
+
 #senha{
     display: flex;
     flex-direction: column;
@@ -167,10 +200,67 @@ form{
     font-size: 13px;
 }
 
+#nome{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 13px;
+}
+
+#user{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 13px;   
+}
+
+#genero{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 13px;  
+}
+
+#form-genero{
+    border-radius: 15px;
+    height: 30px;
+    width: 130px;
+    background-color: #262a36;
+    border: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(168, 168, 168);
+}
+
+#form-username{
+    border-radius: 15px;
+    height: 30px;
+    width: 130px;
+    background-color: #262a36;
+    border: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(168, 168, 168);
+}
+
+#form-nome{
+    border-radius: 15px;
+    height: 30px;
+    width: 130px;
+    background-color: #262a36;
+    border: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(168, 168, 168);
+}
+
 #form-email{
     border-radius: 15px;
     height: 30px;
-    width: 250px;
+    width: 280px;
     background-color: #262a36;
     border: 0px;
     font-family: Arial, Helvetica, sans-serif;
@@ -180,7 +270,17 @@ form{
 #form-senha{
     border-radius: 15px;
     height: 30px;
-    width: 250px;
+    width: 280px;
+    background-color: #262a36;
+    border: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(168, 168, 168);
+}
+
+#form-niver{
+    border-radius: 15px;
+    height: 30px;
+    width: 130px;
     background-color: #262a36;
     border: 0px;
     font-family: Arial, Helvetica, sans-serif;
@@ -192,33 +292,11 @@ form{
     justify-content: center;
 }
 
-#credenciais{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-}
-
-#form-geral{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-
-input[type="text"] {
-    padding: 5px;
-}
-
-input[type="password"] {
-    padding: 5px;
-}
-
-
-#botao-login{
+#botao-registro{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: auto;
-    cursor: pointer;
     width: 50%;
     border-radius: 20px;
     width: 80px;
@@ -252,7 +330,7 @@ a{
     width: 572px;
     height: 573px;
     background-size: cover;
-}
+} 
 
 #sombra{
     display: flex;
@@ -293,7 +371,6 @@ a{
     flex-direction: column;
 }
 
-
 #subtitulo-1{
     display: flex;
     justify-content: center;
@@ -318,8 +395,6 @@ a{
     font-weight: normal;
 }
 
-
-
 @keyframes float {
     0% {
         transform: translateY(0px);
@@ -331,7 +406,6 @@ a{
         transform: translateY(0px);
     }
 }
-
 
 #logo-grande{
     transform: translateY(0px);
