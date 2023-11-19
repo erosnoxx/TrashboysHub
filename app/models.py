@@ -40,15 +40,15 @@ class User(db.Model, UserMixin):
     @property
     def is_authenticated(self):
         return True
-    
+
     @property
     def is_active(self):
         return True
-    
+
     @property
     def is_anonymous(self):
         return False
-    
+
     def get_id(self):
         return str(self.id)
 
@@ -74,7 +74,7 @@ class Permissions(db.Model):
 
     def __init__(self, level):
         self.level = level
-    
+
     def __repr__(self):
         return self.level
 

@@ -1,7 +1,6 @@
 import secrets
 from hashlib import sha256
 from flask import Blueprint, render_template, redirect, url_for
-from flask import current_app
 from flask_login import login_user, logout_user
 from app.forms import LoginForm, UserForm
 from app.models import User, User_Permissions, Permissions
@@ -65,7 +64,7 @@ def register():
         db.session.commit()
 
         return redirect(url_for('login.login_'))
-    return render_template('login/register.html', form=form)
+    return render_template('register/register.html', form=form)
 
 
 @login.route('/logout')
