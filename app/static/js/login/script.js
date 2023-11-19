@@ -34,7 +34,7 @@ function sair_mouse_signin_header() {
     signin_header.style.color = 'white';
 }
 
-let botao_login = document.getElementById('botoes'); //botão de login na aba de login
+let botao_login = document.getElementById('botao-login'); //botão de login na aba de login
 botao_login.addEventListener('mouseenter', passar_mouse);
 botao_login.addEventListener('mouseout', sair_mouse);
 
