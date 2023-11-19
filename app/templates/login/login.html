@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Trashboys | Login</title>
     <link rel="shortcut icon" href="../../static/assets/images/login/trashboys-logo-ico.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../static/css/login/style.css">
 </head>
@@ -17,8 +17,8 @@
         </div>
         <div id="sombra-cabecalho">
             <div id="links-internos">
-                <a href="{{ url_for('login.login_') }}" id="signin-header" class="navs">Login</a>
-                <a href="{{ url_for('login.register') }}" id="signin-header" class="navs">Sign Up</a>
+                <a href="{{ url_for('login.login_') }}" id="login_header" class="navs">Login</a>
+                <a href="{{ url_for('login.register') }}" id="signin_header" class="navs">Sign Up</a>
             </div>
         </div>
     </header>
@@ -42,10 +42,10 @@
                         {{form.password.label}}
                         {{form.password(id_="form-senha", placeholder='********')}}
                         </div>
-                    </div>
                         <div id="botoes">
-                        {{form.submit(id_="botao-login")}}
+                            {{form.submit(id_="botao-login")}}
                         </div>
+                    </div>
                 </form>
                 </div>
             </div>

@@ -29,7 +29,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 573px;
-    height: 69px;
+    height: 68px;
     background-color: #1e2741;
 }
 
@@ -38,7 +38,7 @@ body{
     align-items: center;
     gap: 140px;
     width: 793px;
-    height: 69px;
+    height: 68px;
     background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
 }
 
@@ -57,6 +57,7 @@ body{
     width: 45px;
     height: 45px;
     border-radius: 5px;
+    box-shadow: 1px 1px 20px rgb(126, 126, 126);
 }
 
 #links-internos{
@@ -85,10 +86,11 @@ body{
     justify-content: center;
     align-items: center;
     gap: 70px;
-    padding: 35px;
-    margin-top: 0px;
+    margin: 0px;
     width: 724px;
+    height: 573px;
     background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
+    padding-left: 70px;
 }
 
 #aba-login{
@@ -186,6 +188,7 @@ form{
 #credenciais{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -204,7 +207,10 @@ input[type="password"] {
 }
 
 
-#botao-login{
+#botoes{
+    display: flex;
+    justify-content: center;
+    margin: auto;
     cursor: pointer;
     width: 50%;
     border-radius: 20px;
@@ -236,8 +242,8 @@ a{
     align-items: center;
     box-shadow: inset 159px 100px 100px #1e2741;
     background-image: url(../../assets/images/login/Capa_apagada.png);
-    width: 571px;
-    height: 571px;
+    width: 572px;
+    height: 573px;
     background-size: cover;
 }
 
@@ -245,7 +251,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1px;
+    margin: 0px;
 }
 
 #titulo-mob{
@@ -253,6 +259,7 @@ a{
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    padding-right: 6px;
 }
 
 #trashboys{
