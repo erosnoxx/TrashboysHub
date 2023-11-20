@@ -14,31 +14,22 @@
         <div id="aba-cdg">
             <div id="textos">
                 <h1 id="codigo">We have sent you a verification email</h1>
-                <p>Please put the code we sent in your email below:</p>
+                <p>Please put the code we sent in your email below: <br> <b>{{email}}</b></p>
             </div>
             <div id="forms">
             <form id="form-geral" method="post">
+                {{form.csrf_token}}
                 <div id="credenciais">
                     <label id="digite-cdg" for="Digite o código">OTP Code:</label>
-                    <input id="form-cdg" type="text">
+                    {{form.otp(id_="form-cdg")}}
                     <div id="botoes">
-                        <input id="botao-verificar" type="submit" value="Verify">
+                        {{form.submit(id_="botao-verificar")}}
                     </div>
                 </div>
             </form>
             </div>
         </div>
     </main>
-    <!--
-    <h1>We have sent you a verification email</h1>
-    <h3>Please put the code we sent in your email ({{email}}) below:</h3>
-    <form action="" method="post">
-        {{form.csrf_token}}
-        {{form.otp.label}}
-        {{form.otp}}
-        {{form.submit}}
-    </form>
-    -->
     <script src="../../static/js/register/script_otp.js"></script>
 </body>
 </html>

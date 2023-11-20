@@ -1,6 +1,6 @@
 import secrets
 from hashlib import sha256
-from flask import Blueprint, render_template, redirect, url_for, session, current_app, flash
+from flask import Blueprint, render_template, redirect, url_for, session, flash
 from flask_login import login_user, logout_user
 from app.forms import LoginForm, UserForm, VerificationForm
 from app.models import User, User_Permissions, Permissions
@@ -89,7 +89,7 @@ def logout():
 def otp():
     form = VerificationForm()
     otp = session.get('otp')
-    
+
     if form.validate_on_submit():
         if form.otp.data == otp:
             birth_date_str = session['new_user']['birth']
@@ -105,7 +105,7 @@ def otp():
 
             default_permission = Permissions.query.filter_by(level='user').first()
             user_permission = User_Permissions(user_id=new_user.id,
-                                            permission_id=default_permission.id)
+                                        permission_id=default_permission.id)
             db.session.add(user_permission)
             db.session.commit()
 
