@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'font trash';
+    src: url('../../assets/fonts/login/Charcuterie-Block-W05-Regular.ttf') format('truetype');
+}
+
+body{
+    margin: 0px;
+    /*
+    background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
+    */
+    box-shadow: inset 550px 0px 400px #0B0F1B;
+    background-color: #1e2741;
+}
+
+#menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*
+    background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
+    */
+    background-color: #1e2741;
+}
+
+#textos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#aba-cdg{
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+    width: 450px;
+    height: 500px;
+    background-color: #0d111f;
+    border-radius: 20px;
+}
+
+#codigo{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: normal;
+    font-size: 24px;
+    width: 300px;
+    text-align: center;
+}
+
+#digite-cdg{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: normal; 
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(155, 155, 155);
+    text-align: center;
+}
+
+#forms{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+#form-cdg{
+    border-radius: 15px;
+    height: 30px;
+    width: 150px;
+    background-color: #262a36;
+    border: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(168, 168, 168);
+}
+
+#botoes{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#credenciais{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+#form-geral{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+input[type="text"] {
+    padding: 5px;
+}
+
+input[type="password"] {
+    padding: 5px;
+}
+
+
+#botao-verificar{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 20px;
+    width: 80px;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #2f3853;
+    border: 0px;
+}
+
+#trashboys{
+    display: flex;
+    justify-content: center;
+    width: 338px;
+    font-family: 'font trash';
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-style: italic;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#logo{
+    transform: translateY(0px);
+    animation: float 5s ease-in-out infinite;
+    width: 50px;
+    margin: 0px;
+}
