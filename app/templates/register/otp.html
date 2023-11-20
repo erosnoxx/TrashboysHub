@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTP</title>
+    <title>OTP Verification</title>
+
 </head>
 <body>
     <h1>We have sent you a verification email</h1>
-    <h3>Please put the code we sent in your email below</h3>
+    <h3>Please put the code we sent in your email ({{email}}) below:</h3>
     <form action="" method="post">
         {{form.csrf_token}}
         {{form.otp.label}}

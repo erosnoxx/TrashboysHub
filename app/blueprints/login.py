@@ -75,7 +75,7 @@ def register():
             return redirect(url_for('login.otp'))
         else:
             flash('User already exists.')
-            
+
     return render_template('register/register.html', form=form)
 
 
@@ -111,4 +111,4 @@ def otp():
 
             return redirect(url_for('login.login_'))
 
-    return render_template('register/otp.html', form=form)
+    return render_template('register/otp.html', form=form, email=session['new_user']['email'])
