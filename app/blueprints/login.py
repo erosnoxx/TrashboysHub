@@ -60,15 +60,22 @@ def register():
             'reg_date': datetime.now().date()
         }
 
-        session['otp'] = generate_otp()
-        otp = session.get('otp')
-        user_email = session['new_user']['email']
+        existing_username = User.query.filter(User.username == session['new_user']['username']).first()
+        existing_email = User.query.filter(User.email == session['new_user']['email']).first()
 
-        send_email(subject='Trashboys Hub | E-mail Verification',
-                body=f'Your verification code is: {otp}. Please enter your verification code on the site.',
-                to=user_email)
+        if not existing_username and not existing_email:
+            session['otp'] = generate_otp()
+            otp = session.get('otp')
+            user_email = session['new_user']['email']
 
-        return redirect(url_for('login.otp'))
+            send_email(subject='Trashboys Hub | E-mail Verification',
+                    body=f'Your verification code is: {otp}. Please enter your verification code on the site.',
+                    to=user_email)
+
+            return redirect(url_for('login.otp'))
+        else:
+            flash('User already exists.')
+            
     return render_template('register/register.html', form=form)
 
 
@@ -92,23 +99,16 @@ def otp():
             session['new_user']['birth'] = birth_date
             session['new_user']['reg_date'] = reg_date
 
-            existing_username = User.query.filter(User.username == session['new_user']['username']).first()
-            existing_email = User.query.filter(User.email == session['new_user']['email']).first()
+            new_user = User(**session['new_user'])
+            db.session.add(new_user)
+            db.session.commit()
 
+            default_permission = Permissions.query.filter_by(level='user').first()
+            user_permission = User_Permissions(user_id=new_user.id,
+                                            permission_id=default_permission.id)
+            db.session.add(user_permission)
+            db.session.commit()
 
-            if not existing_username and not existing_email:
-                new_user = User(**session['new_user'])
-                db.session.add(new_user)
-                db.session.commit()
-
-                default_permission = Permissions.query.filter_by(level='user').first()
-                user_permission = User_Permissions(user_id=new_user.id,
-                                                permission_id=default_permission.id)
-                db.session.add(user_permission)
-                db.session.commit()
-
-                return redirect(url_for('login.login_'))
-            else:
-                flash('User already register')
+            return redirect(url_for('login.login_'))
 
     return render_template('register/otp.html', form=form)
