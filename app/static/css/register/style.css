@@ -293,6 +293,7 @@ form{
 }
 
 #botao-registro{
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;

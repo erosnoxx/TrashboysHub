@@ -1,5 +1,5 @@
 from wtforms.fields import StringField, SubmitField, DateField, BooleanField
-from wtforms.fields import PasswordField, TextAreaField, SelectField, FileField
+from wtforms.fields import PasswordField, TextAreaField, SelectField, FileField, IntegerField
 from wtforms.validators import Email, DataRequired, Length
 from flask_wtf import FlaskForm
 from app.models import Category
@@ -50,3 +50,8 @@ class LoginForm(FlaskForm):
                                         validators=[DataRequired(),
                                                     Length(min=8, max=255)])
     submit = SubmitField('Login')
+
+
+class VerificationForm(FlaskForm):
+    otp = IntegerField('OTP', validators=[DataRequired()])
+    submit = SubmitField('Verify')
