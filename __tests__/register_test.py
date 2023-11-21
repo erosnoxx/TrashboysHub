@@ -6,7 +6,6 @@ from faker import Faker
 
 @test('Current user registration', tags=['register'])
 def _(browser=browser):
-    
     browser.visit(url_for('login.login_'))
     browser.find_by_text('Sign up').click()
     browser.fill('fullname', Faker().name())
