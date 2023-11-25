@@ -7,9 +7,12 @@ body{
     margin: 0px;
     /*
     background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
+
+
+    background-color: rgb(37, 37, 37);
     */
-    box-shadow: inset 550px 0px 400px #0B0F1B;
-    background-color: #1e2741;
+    box-shadow: inset 550px 0px 400px rgb(27, 27, 27);
+    background-color: rgb(37, 37, 37);
 }
 
 #signin-header{
@@ -25,7 +28,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 70px;
-    background-color: #1e2741;
+    background-color: rgb(45, 45, 45);
 }
 
 #sombra-cabecalho{
@@ -34,7 +37,7 @@ body{
     align-items: center;
     width: 573px;
     height: 68px;
-    background-color: #1e2741;
+    background-color: rgb(37, 37, 37);
 }
 
 #div-navs{
@@ -43,7 +46,10 @@ body{
     gap: 140px;
     width: 793px;
     height: 68px;
+    /*
     background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
+    */
+    background-image: linear-gradient(to right, rgb(17, 17, 17), rgb(27, 27, 27), rgb(37, 37, 37));
 }
 
 #div-logo-peq{
@@ -85,7 +91,7 @@ body{
     /*
     background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
     */
-    background-color: #1e2741;
+    background-color: rgb(37, 37, 37);
 }
 
 #elements{
@@ -96,7 +102,7 @@ body{
     margin: 0px;
     width: 724px;
     height: 573px;
-    background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
+    background-image: linear-gradient(to right, rgb(17, 17, 17), rgb(27, 27, 27), rgb(37, 37, 37));
     padding-left: 70px;
 }
 
@@ -107,7 +113,7 @@ body{
     gap: 38px;
     width: 450px;
     height: 500px;
-    background-color: #0d111f;
+    background-color: #363636;
     border-radius: 20px;
 }
 
@@ -171,7 +177,7 @@ form{
     border-radius: 15px;
     height: 30px;
     width: 250px;
-    background-color: #262a36;
+    background-color: #222427;
     border: 0px;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(168, 168, 168);
@@ -181,7 +187,7 @@ form{
     border-radius: 15px;
     height: 30px;
     width: 250px;
-    background-color: #262a36;
+    background-color: #222427;
     border: 0px;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(168, 168, 168);
@@ -225,7 +231,7 @@ input[type="password"] {
     height: 40px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    background-color: #2f3853;
+    background-color: #151516;
     border: 0px;
 }
 
@@ -247,7 +253,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset 159px 100px 100px #1e2741;
+    box-shadow: inset 159px 100px 100px rgb(37, 37, 37);
     background-image: url(../../assets/images/login/Capa_apagada.png);
     width: 572px;
     height: 573px;
