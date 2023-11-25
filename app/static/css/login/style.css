@@ -12,7 +12,7 @@ body{
     background-color: rgb(37, 37, 37);
     */
     box-shadow: inset 550px 0px 400px rgb(27, 27, 27);
-    background-color: rgb(37, 37, 37);
+    background-color: rgb(27, 27, 27);
 }
 
 #signin-header{
@@ -28,7 +28,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 70px;
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(37, 37, 37);
 }
 
 #sombra-cabecalho{
@@ -37,7 +37,7 @@ body{
     align-items: center;
     width: 573px;
     height: 68px;
-    background-color: rgb(37, 37, 37);
+    background-color: rgb(27, 27, 27);
 }
 
 #div-navs{
@@ -49,7 +49,7 @@ body{
     /*
     background-image: linear-gradient(to right, #0B0F1B, #172039, #1e2741);
     */
-    background-image: linear-gradient(to right, rgb(17, 17, 17), rgb(27, 27, 27), rgb(37, 37, 37));
+    background-image: linear-gradient(to right, rgb(07, 07, 07), rgb(17, 17, 17), rgb(27, 27, 27));
 }
 
 #div-logo-peq{
@@ -102,7 +102,7 @@ body{
     margin: 0px;
     width: 724px;
     height: 573px;
-    background-image: linear-gradient(to right, rgb(17, 17, 17), rgb(27, 27, 27), rgb(37, 37, 37));
+    background-image: linear-gradient(to right, rgb(07, 07, 07), rgb(17, 17, 17), rgb(27, 27, 27));
     padding-left: 70px;
 }
 
@@ -113,7 +113,7 @@ body{
     gap: 38px;
     width: 450px;
     height: 500px;
-    background-color: #363636;
+    background-color: #373737;
     border-radius: 20px;
 }
 
@@ -253,7 +253,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset 159px 100px 100px rgb(37, 37, 37);
+    box-shadow: inset 159px 100px 100px rgb(27, 27, 27);
     background-image: url(../../assets/images/login/Capa_apagada.png);
     width: 572px;
     height: 573px;
