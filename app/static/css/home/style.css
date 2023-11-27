@@ -81,7 +81,7 @@ header{
 #aba_do_lado{
     width: 0px;
     height: 0%;
-    background-color: blue;
+    background-image: linear-gradient(to right, rgb(07, 07, 07), rgb(17, 17, 17), rgb(27, 27, 27));
 }
 
 #elements{
@@ -243,6 +243,29 @@ h2{
     color: rgb(235, 235, 235);
 }
 
+.sub1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(235, 235, 235);
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bolder;
+    width: 65px;
+    margin: auto;
+}
+
+.sub2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(235, 235, 235);
+    background: none;
+    border: none;
+    color: rgb(168, 168, 168);
+    font-size: 14px;
+    font-weight: bold;
+    width: 45px;
+    margin: auto;
+}
+
 #mscs-lista1{
     display: flex;
     align-items: center;
@@ -261,6 +284,7 @@ h2{
     background-color: rgba(0, 128, 0, 0);
     width: 120px;
     height: 150px;
+    border-radius: 5px;
 }
 
 #lista-2{
@@ -308,6 +332,7 @@ h2{
     background-color: rgba(0, 128, 0, 0);
     width: 120px;
     height: 150px;
+    border-radius: 5px;
 }
 
 .item-musica{
